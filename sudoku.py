@@ -14,16 +14,17 @@ grid = [[9,0,0,0,2,0,1,0,0],
 # window!
 root = Tk()
 root.title("Sudoku Solver")
-root.geometry("500x500")
-entry0_0 = Entry(root)
-entry0_1 = Entry(root)
+root.geometry("700x700")
 
-entry0_0.grid(row = 0, column = 0, pady = 2)
-entry0_1.grid(row = 0, column = 1, pady = 2)
+entries = []
 
-# for x in range(0:10)
-#     for y in range(0:10)
-#     entry
+calculate.grid(row = 10,column = 5)
+for x in range(9):
+    for y in range(9):
+        entry =Text(root, width=2, height=1, font="Calibri 40")
+        entry.grid(row = x, column=y)
+        entries.append(entry)
+
 
 
 def possible(row, column, number):
@@ -64,6 +65,6 @@ def solve():
       
     print(np.matrix(grid))
     input('[Enter] More possible solutions')
-
+calculate = Button(root, command=solve, text="Solve")
 root.mainloop
 solve()
