@@ -18,7 +18,7 @@ root.geometry("700x700")
 
 entries = []
 
-calculate.grid(row = 10,column = 5)
+
 for x in range(9):
     for y in range(9):
         entry =Text(root, width=2, height=1, font="Calibri 40")
@@ -65,6 +65,7 @@ def solve():
       
     print(np.matrix(grid))
     input('[Enter] More possible solutions')
-calculate = Button(root, command=solve, text="Solve")
+calculate = Button(root, text= "Solve", command=solve )
+calculate.grid(row=10, column=4)
 root.mainloop
 solve()
