@@ -11,19 +11,21 @@ grid = [[9,0,0,0,2,0,1,0,0],
         [0,0,0,1,0,0,0,0,2],
         [0,0,0,0,7,0,0,8,0]]
 
-# window!
 root = Tk()
-root.title("Sudoku Solver")
-root.geometry("700x700")
-
 entries = []
 
+def graphics():
 
-for x in range(9):
-    for y in range(9):
-        entry =Text(root, width=2, height=1, font="Calibri 40")
-        entry.grid(row = x, column=y)
-        entries.append(entry)
+    root.title("Sudoku Solver")
+    root.geometry("700x700")
+    
+
+    for x in range(9):
+        for y in range(9):
+            entry =Text(root, width=2, height=1, font="Calibri 40")
+            entry.grid(row = x, column=y)
+            entries.append(entry)
+            root.mainloop()
 
 
 
@@ -65,7 +67,12 @@ def solve():
       
     print(np.matrix(grid))
     input('[Enter] More possible solutions')
-calculate = Button(root, text= "Solve", command=solve )
-calculate.grid(row=10, column=4)
-root.mainloop
-solve()
+
+def main():
+    calculate = Button(root, text= "Solve", command=solve() )
+    calculate.grid(row=10, column=4)
+    graphics()
+    
+
+if __name__ == "__main__":
+    main()
